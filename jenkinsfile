@@ -1,7 +1,7 @@
 pipeline {
     agent { docker 'node:6.3' }
     stages {
-	    properties([pipelineTriggers([pollSCM('')])])
+	    properties([pipelineTriggers([pollSCM('enable')])])
         stage('build') {
             steps {
                 sh 'npm --version'
