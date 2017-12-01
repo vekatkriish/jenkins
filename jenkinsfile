@@ -1,9 +1,16 @@
 pipeline {
     agent { docker 'node:6.3' }
     stages {
-	    properties([pipelineTriggers([pollSCM('enable')])])
+	    
         stage('build') {
             steps {
+		import hudson.model.*
+		import hudson.EnvVars
+		import groovy.json.JsonSlurperClassic
+		import groovy.json.JsonBuilder
+		import groovy.json.JsonOutput
+		import java.net.URL
+                properties([pipelineTriggers([pollSCM('enable')])])
                 sh 'npm --version'
 		sh 'npm --version'
 		sh "echo venkatesh"
