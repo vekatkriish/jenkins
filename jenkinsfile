@@ -5,6 +5,7 @@ pipeline {
 	properties([pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('H/15 * * * *')])])
             steps {
                 sh 'npm --version'
+		sh 'npm --version'
             }
         }
     }
