@@ -1,11 +1,11 @@
 pipeline {
-    agent { docker { image 'node:6.3' } 
+    agent { docker { image 'dockerkriish/jenkins-docker-slave:latest' } 
           }
     stages {
 	    
         stage('build') {
             steps {
-                sh 'node --version'
+                sh 'mvn --version'
 		sh "echo venkatesh"
                 sh "echo jagathpathi"
             }
