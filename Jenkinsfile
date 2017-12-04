@@ -1,6 +1,11 @@
 pipeline {
     agent { docker { image 'maven:3.3.3' } 
           }
+    environment{
+
+               CC = 'clang'
+
+               }
     stages {
 	    
         stage('build') {
